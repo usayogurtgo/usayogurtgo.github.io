@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Plan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .overview, .week, .recovery, .adaptations, .specific-needs {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .week {
+            border-color: #0056b3;
+        }
+        .daily-schedule {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .daily-schedule table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .daily-schedule th, .daily-schedule td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .daily-schedule th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="overview">
+            <h1>Training Plan Overview</h1>
+            <p><strong>Race Length:</strong> {{ training_plan['overview']['race_length'] }}</p>
+            <p><strong>Race Date:</strong> {{ training_plan['overview']['race_date'] }}</p>
+            <p><strong>Training Start Date:</strong> {{ training_plan['overview']['training_start_date'] }}</p>
+            <p><strong>Goal Race Pace:</strong> {{ training_plan['overview']['goal_race_pace'] }}</p>
+        </div>
+
+        {% for week in training_plan.weekly_training_schedule %}
+        <div class="week">
+            <h2>Week {{ week.week_number }} ({{ week.week_date }})</h2>
+            <div class="daily-schedule">
+                <h3>Daily Schedule</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Type</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for day, schedule in week.daily_schedule.items() %}
+                        <tr>
+                            <td>{{ day }}</td>
+                            <td>{{ schedule.type }}</td>
+                            <td>{{ schedule.details }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="recovery">
+            <h2>Recovery and Injury Prevention</h2>
+            <p><strong>General Recommendations:</strong> {{ training_plan.recovery_and_injury_prevention.general_recommendations }}</p>
+            <p><strong>Specific Recovery Strategies:</strong> {{ training_plan.recovery_and_injury_prevention.specific_recovery_strategies }}</p>
+        </div>
+
+        <div class="adaptations">
+            <h2>Training Adaptations</h2>
+            <p>{{ training_plan.training_adaptations }}</p>
+        </div>
+
+        <div class="specific-needs">
+            <h2>Age and Gender Specific Needs</h2>
+            <p><strong>Age Specific:</strong> {{ training_plan.age_and_gender_specific_needs.age_specific }}</p>
+            <p><strong>Gender Specific:</strong> {{ training_plan.age_and_gender_specific_needs.gender_specific }}</p>
+        </div>
+    </div>
+</body>
+</html>

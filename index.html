@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Fornia Running</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-check-label {
+            margin-left: 0.5rem;
+        }
+        .form-check {
+            margin-bottom: 0.5rem;
+        }
+        .form-header {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="form-header">Enter Your Running Information</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="race_date"><strong>Race Date:</strong></label>
+                <input type="date" class="form-control" id="race_date" name="race_date">
+            </div>
+
+            <div class="form-group">
+                <strong>Race Length:</strong><br>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="race_length1" name="race_length" value="5K">
+                    <label class="form-check-label" for="race_length1">5K</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="race_length2" name="race_length" value="10K">
+                    <label class="form-check-label" for="race_length2">10K</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="race_length3" name="race_length" value="15K">
+                    <label class="form-check-label" for="race_length3">15K</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="race_length4" name="race_length" value="Half marathon">
+                    <label class="form-check-label" for="race_length4">Half marathon</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="race_length5" name="race_length" value="Marathon">
+                    <label class="form-check-label" for="race_length5">Marathon</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="race_length6" name="race_length" value="Ultra marathon">
+                    <label class="form-check-label" for="race_length6">+50K</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="goal_race_pace"><strong>Goal Time:</strong></label>
+                <input placeholder="Example - 1:30 hrs" type="text" class="form-control" id="goal_race_pace" name="goal_race_pace">
+            </div>
+
+            <div class="form-group">
+                <label for="training_start_date"><strong>Training Block Start Date:</strong></label>
+                <input type="date" class="form-control" id="training_start_date" name="training_start_date">
+            </div>
+
+            <div class="form-group">
+                <label for="age"><strong>Age:</strong></label>
+                <input type="number" class="form-control" id="age" name="age">
+            </div>
+
+            <div class="form-group">
+                <strong>Gender:</strong><br>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="gender1" name="gender" value="Male">
+                    <label class="form-check-label" for="gender1">Male</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="gender2" name="gender" value="Female">
+                    <label class="form-check-label" for="gender2">Female</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="gender3" name="gender" value="Other">
+                    <label class="form-check-label" for="gender3">Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <strong>Runner Experience:</strong><br>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="Experience1" name="runner_experience" value="Beginner">
+                    <label class="form-check-label" for="Experience1">Beginner</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="Experience2" name="runner_experience" value="Intermediate">
+                    <label class="form-check-label" for="Experience2">Intermediate</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="Experience3" name="runner_experience" value="Advanced">
+                    <label class="form-check-label" for="Experience3">Advanced</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="Experience4" name="runner_experience" value="Professional">
+                    <label class="form-check-label" for="Experience4">Professional</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="current_weekly_mileage"><strong>Current Weekly Mileage (miles):</strong></label>
+                <input type="number" class="form-control" id="current_weekly_mileage" name="current_weekly_mileage">
+            </div>
+
+            <div class="form-group">
+                <label for="current_race_pace_ability"><strong>Current Estimated Race Time:</strong></label>
+                <input placeholder="Example - 1:45 hrs" type="text" class="form-control" id="current_race_pace_ability" name="current_race_pace_ability">
+            </div>
+
+            <div class="form-group">
+                <label for="days_per_week"><strong>How Many Days Will You Run Each Week:</strong></label>
+                <input type="number" class="form-control" id="days_per_week" name="days_per_week">
+            </div>
+
+            <div class="form-group">
+                <strong>Which Days Are You Available:</strong><br>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="select_all_days">
+                    <label class="form-check-label" for="select_all_days">Select/Deselect All</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input day-checkbox" id="days_available1" name="days_available" value="Monday">
+                    <label class="form-check-label" for="days_available1">Monday</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input day-checkbox" id="days_available2" name="days_available" value="Tuesday">
+                    <label class="form-check-label" for="days_available2">Tuesday</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input day-checkbox" id="days_available3" name="days_available" value="Wednesday">
+                    <label class="form-check-label" for="days_available3">Wednesday</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input day-checkbox" id="days_available4" name="days_available" value="Thursday">
+                    <label class="form-check-label" for="days_available4">Thursday</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input day-checkbox" id="days_available5" name="days_available" value="Friday">
+                    <label class="form-check-label" for="days_available5">Friday</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input day-checkbox" id="days_available6" name="days_available" value="Saturday">
+                    <label class="form-check-label" for="days_available6">Saturday</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input day-checkbox" id="days_available7" name="days_available" value="Sunday">
+                    <label class="form-check-label" for="days_available7">Sunday</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <strong>Which Day Do You Want To Run Your Long Run:</strong><br>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="long_run_day1" name="long_run_day" value="Monday">
+                    <label class="form-check-label" for="long_run_day1">Monday</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="long_run_day2" name="long_run_day" value="Tuesday">
+                    <label class="form-check-label" for="long_run_day2">Tuesday</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="long_run_day3" name="long_run_day" value="Wednesday">
+                    <label class="form-check-label" for="long_run_day3">Wednesday</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="long_run_day4" name="long_run_day" value="Thursday">
+                    <label class="form-check-label" for="long_run_day4">Thursday</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="long_run_day5" name="long_run_day" value="Friday">
+                    <label class="form-check-label" for="long_run_day5">Friday</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="long_run_day6" name="long_run_day" value="Saturday">
+                    <label class="form-check-label" for="long_run_day6">Saturday</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="long_run_day7" name="long_run_day" value="Sunday">
+                    <label class="form-check-label" for="long_run_day7">Sunday</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Generate Training Plan</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('select_all_days').addEventListener('change', function() {
+            const isChecked = this.checked;
+            const checkboxes = document.querySelectorAll('.day-checkbox');
+            checkboxes.forEach(checkbox => checkbox.checked = isChecked);
+        });
+    </script>
+</body>
+</html>
